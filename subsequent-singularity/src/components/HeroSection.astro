@@ -1,0 +1,41 @@
+---
+// No script needed for now
+---
+
+<section class="flex flex-col md:flex-row items-center justify-between p-8 max-w-7xl mx-auto">
+    <!-- Image Section -->
+    <div class="w-full md:w-1/2 mb-6 md:mb-0">
+      <img src="/placeholder.jpg" alt="Product Image" class="w-full rounded-lg shadow-md" />
+    </div>
+  
+    <!-- Text and Email Capture Section -->
+    <div class="w-full md:w-1/2 md:pl-12">
+      <h1 class="text-4xl font-bold mb-4">VirtusX1: Capture Your Journey, Secure Your Ride</h1>
+      <p class="text-lg mb-6">
+        The VirtusX1 by YASHICA and I'm Back is the ultimate smart helmet with a built-in 2K camera for easy video sharing and ride security. With wraparound lighting, turn signals, and Bluetooth hands-free connectivity, you’re covered every mile of the way.
+      </p>
+  
+      <!-- Email Capture Form -->
+      <form
+        name="email-signup"
+        method="POST"
+        data-netlify="true"
+        class="flex flex-col md:flex-row gap-4"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="p-3 flex-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+        <button
+          type="submit"
+          class="bg-green-500 text-white font-semibold p-3 rounded-lg hover:bg-green-600 transition"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+  
