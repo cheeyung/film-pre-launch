@@ -1,0 +1,62 @@
+---
+// Props: { imgSrc, imgAlt, header, body }
+const { imgSrc, imgAlt, header, body } = Astro.props;
+---
+
+<div class="feature feature-left">
+    <div class="image-wrapper">
+        <img src={imgSrc} alt={imgAlt} class="feature-image" />
+    </div>
+    <div class="feature-content">
+        <h2 class="feature-header">{header}</h2>
+        <p class="feature-body">{body}</p>
+    </div>
+</div>
+
+<style>
+  .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-left {
+    flex-direction: row;
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    height: 300px;
+    overflow: hidden 
+  }
+
+  .feature-image {
+    width: 100%;          /* Allow the image to fill the wrapper width */
+    height: 100%;         /* Allow the image to fill the wrapper height */
+    object-fit: cover;    /* Maintain aspect ratio and cover the entire wrapper */
+  }
+
+  .feature-content {
+    flex: 1;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .feature-header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Thin font */
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>

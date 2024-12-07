@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section-divider {
+    width: 80%;
+    height: 1.5px;
+    background-color: lightgray; /* Light gray color */
+    margin: 1rem auto;         /* Adds space above and below the divider */
+}
