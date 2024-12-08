@@ -1,9 +1,12 @@
 ---
-import HeroSection from '../components/HeroSection.astro';
+import HeroSection from '../components/HeroSection2.astro';
 import Layout from '../layouts/Layout.astro';
 import FeatureLeft from '../components/FeatureLeft.astro';
 import FeatureRight from '../components/FeatureRight.astro';
 import EmailCapture from '../components/EmailCapture.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import Footer from '../components/Footer.astro';
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -29,21 +32,27 @@ import EmailCapture from '../components/EmailCapture.astro';
     body="Heat can accumulate in cars rapidly, causing the interior cabins to be significantly warmer then even outside temperature. This excessive heat can cause damage to leather, rubber, electronics and more. ArcticFilm will suppress this peak temperature, protecting your belongings from heat damage."
   />
 
-  <EmailCapture />
-
   <FeatureLeft 
   imgSrc="./assets/images/img4.jpg" 
   imgAlt="" 
   header="Cutting edge material science" 
   body="Using advanced materials, ArcticFlim keeps your car cool using radiative cooling. Radiative cooling doesn’t just prevent solar heat from entering your car, it actively cools it. In some cases, cars left outside might even end up colder than outside temperature. "
-/>
+  />
 
-<FeatureRight 
-  imgSrc="./assets/images/img5.jpg" 
-  imgAlt="" 
-  header="What is radiative cooling?" 
-  body="Radiative cooling works by emitting infrared heat straight into the coldness of outer space. ArcticFilm has been carefully engineered to emit heat into the infrared atmospheric window. This spectrum of infrared waves pass directly through the Earth’s atmosphere into space."
-/>
+  <FeatureRight 
+    imgSrc="./assets/images/img5.jpg" 
+    imgAlt="" 
+    header="What is radiative cooling?" 
+    body="Radiative cooling works by emitting infrared heat straight into the coldness of outer space. ArcticFilm has been carefully engineered to emit heat into the infrared atmospheric window. This spectrum of infrared waves pass directly through the Earth’s atmosphere into space."
+  />
 
+  <EmailCapture />
+
+  <!-- Divider Line -->
+  <div class="section-divider"></div>
+
+  <FaqAccordion />
+
+  <Footer />
 
 </Layout>

@@ -1,0 +1,138 @@
+---
+// No special script needed for now
+const images = [
+  { src: './assets/images/img1.png', alt: 'Product Image 1' },
+  { src: './assets/images/img2.png', alt: 'Product Image 2' },
+  { src: './assets/images/img3.png', alt: 'Product Image 3' },
+  //{ src: './assets/images/img4.png', alt: 'Product Image 4' },
+  //{ src: './assets/images/img5.png', alt: 'Product Image 5' },
+];
+---
+
+<section class="flex flex-col md:flex-row items-center justify-between p-8 max-w-7xl mx-auto">
+  <!-- Carousel Section -->
+  <div class="w-full md:w-1/2 mb-6 md:mb-0 relative">
+    <!-- Main Image Display -->
+    <div class="main-image-wrapper mb-4 relative">
+      <img id="main-image" src={images[0].src} alt={images[0].alt} class="w-full rounded-lg shadow-md object-cover h-96" />
+    </div>
+
+    <!-- Thumbnail Previews with Navigation Arrows -->
+    <div class="flex items-center justify-center gap-2 relative">
+      <!-- Previous Button -->
+      <button id="prev-btn" class="absolute left-0 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 transition -translate-x-8">
+        &#10094;
+      </button>
+
+      <!-- Thumbnails -->
+      <div class="flex gap-2">
+        {images.map((image, index) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            class={`thumbnail w-16 h-16 object-cover rounded-lg cursor-pointer border-2 ${index === 0 ? 'border-green-500' : 'border-transparent'} hover:border-green-500 transition`}
+            data-index={index}
+          />
+        ))}
+      </div>
+
+      <!-- Next Button -->
+      <button id="next-btn" class="absolute right-0 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 transition translate-x-8">
+        &#10095;
+      </button>
+    </div>
+  </div>
+
+  <!-- Text and Email Capture Section -->
+  <div class="w-full md:w-1/2 md:pl-12">
+    <h1 class="text-4xl font-raleway font-bold mb-4">ArcticFilm: Next Generation Cooling Windows</h1>
+    <p class="font-lato font-light text-lg mb-6">
+      Space is the deepest reservoir of cold in our physical universe. ArcticFilms uses cutting-edge technology to tap into this vast resource of cold to bring free cooling to your car.
+    </p>
+
+    <p class="font-lato font-light text-lg mb-6">
+      ArcticFilm is targeted to launch in the second half of 2025. Subscribe to receive updates and notifications of our planned early bird offers.
+    </p>
+
+    <!-- Email Capture Form -->
+    <form name="email-signup" method="POST" data-netlify="true" class="flex flex-col md:flex-row gap-4">
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="p-3 flex-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <button
+        type="submit"
+        class="bg-green-500 text-white font-semibold p-3 rounded-lg hover:bg-green-600 transition"
+      >
+        Get Notified
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+      './assets/images/img1.png',
+      './assets/images/img2.png',
+      './assets/images/img3.png',
+      //'./assets/images/img4.png',
+      //'./assets/images/img5.png',
+    ];
+
+    let currentIndex = 0;
+    const mainImage = document.getElementById("main-image");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    // Function to update the main image and highlight the active thumbnail
+    function setMainImage(index) {
+      currentIndex = index;
+      mainImage.src = images[currentIndex];
+      updateActiveThumbnail();
+    }
+
+    // Function to update the active thumbnail's border
+    function updateActiveThumbnail() {
+      thumbnails.forEach((thumb, i) => {
+        if (i === currentIndex) {
+          thumb.classList.add("border-green-500");
+          thumb.classList.remove("border-transparent");
+        } else {
+          thumb.classList.remove("border-green-500");
+          thumb.classList.add("border-transparent");
+        }
+      });
+    }
+
+    // Show previous image
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      setMainImage(currentIndex);
+    });
+
+    // Show next image
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      setMainImage(currentIndex);
+    });
+
+    // Thumbnail click event
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => setMainImage(index));
+    });
+
+    // Auto-rotate every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      setMainImage(currentIndex);
+    }, 5000);
+
+    // Initialize the active thumbnail
+    updateActiveThumbnail();
+  });
+</script>
