@@ -7,4 +7,4 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   srcDir: 'src',
   adapter: netlify(),
-});
+})
