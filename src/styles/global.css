@@ -3,8 +3,28 @@
 @tailwind utilities;
 
 .section-divider {
-    width: 80%;
-    height: 1.5px;
-    background-color: lightgray; /* Light gray color */
-    margin: 1rem auto;         /* Adds space above and below the divider */
+  width: 80%;
+  height: 1.5px;
+  background-color: lightgray; /* Light gray color */
+  margin: 1rem auto; /* Adds space above and below the divider */
+}
+
+/* FAQ Container */
+.faq {
+  @apply mb-2 w-full rounded-md overflow-hidden shadow-md p-0;
+}
+
+/* FAQ Question */
+.faq-question {
+  @apply break-words h-[60px] bg-[#041124] text-white text-lg font-lato font-medium p-4 cursor-pointer flex justify-between items-center hover:bg-[#2a2a2a] transition-colors;
+}
+
+/* FAQ Answer */
+.faq-answer {
+  @apply bg-[#041124ef] text-[#dcdcdc] font-lato font-thin max-h-0 overflow-hidden transition-all duration-300 px-4;
+}
+
+/* FAQ Icon */
+.faq-icon {
+  @apply transition-transform;
 }

@@ -1,0 +1,66 @@
+---
+// Props: { imgSrc, imgAlt, header, body }
+const { imgSrc, imgAlt, header, body } = Astro.props;
+---
+
+<div class="feature feature-left w-full md:max-w-[80%] mx-auto">
+    <div class="image-wrapper">
+        <img src={imgSrc} alt={imgAlt} class="feature-image" />
+    </div>
+    <div class="feature-content">
+        <h2 class="feature-header">{header}</h2>
+        <p class="feature-body">{body}</p>
+    </div>
+</div>
+
+<style>
+  .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    background-color: #f7f7f7; /* Very light grey background */
+    padding: 1.5rem;           /* Add padding inside the component */
+    border-radius: 8px;        /* Optional: Rounded corners for a softer look */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Optional: Soft shadow for depth */
+  }
+
+  .feature-left {
+    flex-direction: row;
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    height: 300px;
+    overflow: hidden 
+  }
+
+  .feature-image {
+    width: 100%;          /* Allow the image to fill the wrapper width */
+    height: 100%;         /* Allow the image to fill the wrapper height */
+    object-fit: cover;    /* Maintain aspect ratio and cover the entire wrapper */
+  }
+
+  .feature-content {
+    flex: 1;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .feature-header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Thin font */
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+// No script needed for now
+---
+
+<section
+  class="flex flex-col md:flex-row items-center justify-between p-8 max-w-7xl mx-auto"
+>
+  <!-- Image Section -->
+  <div class="w-full md:w-1/2 mb-6 md:mb-0">
+    <img
+      src="./assets/images/img1.png"
+      alt="Product Image"
+      class="w-full rounded-lg shadow-md"
+    />
+  </div>
+
+  <!-- Text and Email Capture Section -->
+  <div class="w-full md:w-1/2 md:pl-12">
+    <h1 class="text-4xl font-raleway font-bold mb-4">
+      ArcticFilm: Next Generation Cooling Windows
+    </h1>
+    <p class="font-lato font-light text-lg mb-6">
+      Space is the deepest reservoir of cold in our physical universe.
+      ArcticFilms uses cutting edge technology to tap on this vast resource of
+      cold to bring free cooling to your car.
+    </p>
+
+    <p class="font-lato font-light text-lg mb-6">
+      ArcticFilm is targeted to launch in the second half of 2025. Subscribe to
+      recieve updates and notifications of our planned early bird offers.
+    </p>
+
+    <!-- Email Capture Form -->
+    <form
+      name="email-signup"
+      method="POST"
+      data-netlify="true"
+      class="flex flex-col md:flex-row gap-4"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="p-3 flex-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <button
+        type="submit"
+        class="bg-green-500 font-lato font-semibold p-3 rounded-lg hover:bg-green-600 transition"
+      >
+        Get Notified
+      </button>
+    </form>
+  </div>
+</section>

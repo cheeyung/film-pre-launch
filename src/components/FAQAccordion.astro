@@ -2,150 +2,119 @@
 // No special Astro script needed
 ---
 
-<style>
-    .faq-container {
-      max-width: 600px;
-      margin: 2rem auto;
-      font-family: Arial, sans-serif;
-    }
-  
-    .faq {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-    }
-  
-    .faq-question {
-      background-color: #1e1e1e;
-      color: #fff;
-      padding: 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-  
-    .faq-question:hover {
-      background-color: #2a2a2a;
-    }
-  
-    .faq-answer {
-      background-color: #252525;
-      color: #dcdcdc;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      padding: 0 1rem;
-    }
-  
-    .faq.open .faq-answer {
-      max-height: 200px;
-      padding: 1rem;
-    }
-  
-    .faq-icon {
-      transition: transform 0.3s ease;
-    }
-  
-    .faq.open .faq-icon {
-      transform: rotate(90deg);
-    }
-  
-    /* Optional: Adjust spacing and shadow for a sleek card effect */
-    .faq {
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    }
+<div class="max-w-[700px] mx-auto my-8 font-sans">
+  <h2 class="text-center font-raleway text-2xl font-bold py-4">
+    Frequently Asked Questions
+  </h2>
 
-    .faq-header {
-    text-align: center;
-    font-family: 'Raleway', sans-serif; /* Example font, change as desired */
-    font-size: 2rem;
-    padding: 1rem;
-  }
+  <p
+    class="text-center font-lato font-light text-base mb-8 max-w-[500px] mx-auto leading-relaxed"
+  >
+    Here are some common questions and answers about ArcticFilm. If you need
+    more assistance, feel free to reach out!
+  </p>
 
-  .faq-description {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-  }
-  </style>
-  
-  <div class="faq-container">
-    <h2 class="faq-header">Frequently Asked Questions</h2>
-
-    <p class="faq-description">
-        Here are some common questions and answers to help you get the most out of AI365. If you need more assistance, feel free to reach out!
-    </p>
+  <div>
+    <div class="faq">
+      <div class="faq-question">
+        How is ArcticFilm different from traditional solar window films?
+        <span class="faq-icon">➤</span>
+      </div>
+      <div class="faq-answer">
+        <p class="py-4">
+          ArcticFilm doesn’t just block heat — it actively cools your car using
+          radiative cooling technology, making it more effective than
+          conventional films.
+        </p>
+      </div>
+    </div>
 
     <div class="faq">
       <div class="faq-question">
-        Are there any subscription fees or after-purchase payments?
+        Will ArcticFilm work in all weather conditions?
         <span class="faq-icon">➤</span>
       </div>
       <div class="faq-answer">
-        No, AI365 does not have any subscription fees or additional costs after purchase.
-      </div>
-    </div>
-  
-    <div class="faq">
-      <div class="faq-question">
-        What is the battery life of AI365?
-        <span class="faq-icon">➤</span>
-      </div>
-      <div class="faq-answer">
-        The battery life lasts up to 12 hours on a full charge with typical use.
-      </div>
-    </div>
-  
-    <div class="faq">
-      <div class="faq-question">
-        Is there an app for parents to check usage on their phones?
-        <span class="faq-icon">➤</span>
-      </div>
-      <div class="faq-answer">
-        Yes, there is a companion app available for both iOS and Android.
-      </div>
-    </div>
-  
-    <div class="faq">
-      <div class="faq-question">
-        Does AI365 come with a SIM card for data?
-        <span class="faq-icon">➤</span>
-      </div>
-      <div class="faq-answer">
-        Yes, AI365 includes a pre-installed SIM card for easy setup.
-      </div>
-    </div>
-  
-    <div class="faq">
-      <div class="faq-question">
-        How is content saved?
-        <span class="faq-icon">➤</span>
-      </div>
-      <div class="faq-answer">
-        Content is saved securely to the cloud, accessible from your account at any time.
+        <p class="py-4">
+          Yes! ArcticFilm can function effectively in most climates, though its
+          cooling power is most noticeable in hot and dry conditions.
+        </p>
       </div>
     </div>
   </div>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const faqs = document.querySelectorAll('.faq');
-  
-      faqs.forEach(faq => {
-        faq.querySelector('.faq-question').addEventListener('click', () => {
-          faq.classList.toggle('open');
-        });
+
+  <div class="faq">
+    <div class="faq-question">
+      Does ArcticFilm work indoors?
+      <span class="faq-icon">➤</span>
+    </div>
+    <div class="faq-answer">
+      <p class="py-4">
+        No it doesn’t. ArcticFilm only works in direct line-of-sight to the sky.
+        But that's a good thing, otherwise your car might become uncomfortably
+        cold indoors.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-question">
+      Do I need to use ArcticFilm on all my windows?
+      <span class="faq-icon">➤</span>
+    </div>
+    <div class="faq-answer">
+      <p class="py-4">
+        Nope! ArcticFilm is most effective when it is pointing towards the sky,
+        so it should be applied on sky roofs and rear windscreens first. You may
+        still choose to apply ArcticFilm on other windows, or you can choose to
+        apply other window tints and films of your choice!
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-question">
+      Is ArcticFilm legal for use on all windows in my car?
+      <span class="faq-icon">➤</span>
+    </div>
+    <div class="faq-answer">
+      <p class="py-4">
+        While ArcticFilm offers cooling benefits, you should check local window
+        tinting regulations to ensure compliance for different car windows.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-question">
+      How do I apply ArcticFilm?
+      <span class="faq-icon">➤</span>
+    </div>
+    <div class="faq-answer">
+      <p class="py-4">TBC</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqs = document.querySelectorAll(".faq-question");
+
+    faqs.forEach((question) => {
+      question.addEventListener("click", () => {
+        const faq = question.parentElement;
+        faq.classList.toggle("open");
+        const answer = faq.querySelector(".faq-answer");
+        const icon = faq.querySelector(".faq-icon");
+
+        if (faq.classList.contains("open")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          icon.style.transform = "rotate(90deg)";
+        } else {
+          answer.style.maxHeight = "0";
+          icon.style.transform = "rotate(0deg)";
+        }
       });
     });
-  </script>
-  
+  });
+</script>
